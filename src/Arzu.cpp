@@ -7,22 +7,22 @@ Zain::Arzu::Arzu(const int &argc, char** argv) {
     this->argv = argv;
 }
 
-int Zain::Arzu::index(const char* key) {
+int Zain::Arzu::index(const char* argv) {
     std::string temporary_argv;
     for(int i = 1; i < argc; i++) {
-        temporary_argv =  *(argv + i);
-        if(temporary_argv == key) {
+        temporary_argv =  *(this->argv + i);
+        if(temporary_argv == argv) {
             return i;
         }
     }
     return -1;
 }
 
-bool Zain::Arzu::exists(const char* key) {
+bool Zain::Arzu::exists(const char* argv) {
     std::string temporary_argv;
     for(int i = 1; i < argc; i++) {
-        temporary_argv =  *(argv + i);
-        if(temporary_argv == key) {
+        temporary_argv =  *(this->argv + i);
+        if(temporary_argv == argv) {
             return 1;
         }
     }
@@ -31,7 +31,7 @@ bool Zain::Arzu::exists(const char* key) {
 
 const char* Zain::Arzu::getValue(const char* key) {
     int key_index = index(key);
-    if(key_index != -1) {
+    if(key_index != -1 && key_index + 1 <= argc) {
         return *(argv + 1 + key_index);
     }
     return "";
