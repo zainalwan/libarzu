@@ -3,7 +3,7 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
-- [Installation](#installation)
+- [Building](#building)
 - [Usage](#usage)
 - [Development](#development)
 
